@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Enter Your age:-
+    </h1>
+    <input type="text" class="myInput">
+    <button class="mySubmit">Submit</button>
+    <h3 class="myH3"></h3>
+
+    <script>
+        const myInput = document.querySelector(".myInput");
+        const mySubmit = document.querySelector(".mySubmit");
+        const myH3= document.querySelector(".myH3");
+
+        mySubmit.onclick = function() {
+            age = myInput.value;
+            age = Number(age);
+            if (age < 18) {
+                document.querySelector(".myH3").innerHTML = `You should be above 18 to enter this site`;
+            }
+            else if (age > 0)  {
+                document
+            }
+        }
+    </script>
+</body>
+</html>
