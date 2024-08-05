@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="myH1">Enter the Radius of the Circle:-</h1>
+    <label>Radius:-</label>
+    <input type="text" placeholder="enter number" class="myText"><br><br>
+    <button class="myButton">Submit</button>
+    <h3 class="myResult"></h3>
+
+    <script>
+        const PI = 3.14;
+        let radius;
+        let circumference;
+
+        /*document.querySelector(".myButton").onclick = function () {
+            radius = document.querySelector(".myText").value;
+            radius = Number(radius);
+            circumference = radius * 2 * 3.14;
+            document.querySelector(".myResult").innerHTML = `The circumference of the Circle is ${Math.round(circumference * 100)/100}`
+        }*/
+
+        document.querySelector(".myButton").onclick = function () {
+            radius = document.querySelector(".myText").value;
+            radius = Number(radius);
+
+            if (radius === 911) {
+                document.querySelector(".myResult").innerHTML = "✈️🏢🔥🔥";
+            }
+            else if (radius === 69) {
+                document.querySelector(".myResult").innerHTML = "👨💘👧";
+            } 
+            else if (radius === 106) {
+                document.querySelector(".myResult").innerHTML = "Man of Culture";
+            }
+            else if (radius === 0) {
+                document.querySelector(".myResult").innerHTML = "Cheen tapak dum dum";
+            }
+            else {
+                circumference = radius * 2 * PI;
+                document.querySelector(".myResult").innerHTML = `The circumference of the Circle is ${Math.round(circumference * 100) / 100}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

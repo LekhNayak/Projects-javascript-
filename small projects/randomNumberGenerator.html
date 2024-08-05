@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .number {
+            height: 200px;
+            font-size: 190px;
+        }
+
+        .button {
+            background-color: rgb(126, 215, 250);
+            padding: 12px 20px;
+            font-size: 20px;
+            border-radius: 12px;
+            transition: 0.5s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: rgb(69, 159, 244);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number"></div>
+        <button class="button">roll the dice</button>
+    </div>
+
+    <script>
+        let number;
+
+        document.querySelector(".button").onclick = function() {
+            number = Math.floor(Math.random() * 100) + 1;
+            document.querySelector(".number").innerHTML = `${number}`;
+        }
+    </script>
+</body>
+</html>
