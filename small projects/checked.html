@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="myCheckBox">
+    <label for="myCheckBox">Subscribe</label> <br>
+
+    <input type="radio" id="visaBtn" name="payment">
+    <label for="visaBtn">Visa</label> <br>
+
+    <input type="radio"  id="payPalBtn" name="payment">
+    <label for="payPalBtn">PayPal</label> <br>
+
+    <input type="radio" id="masterCardBtn" name="payment">
+    <label for="masterCardBtn">Master Card</label> <br>
+
+    <button class="mySubmit">Submit</button>
+    <h3 class="subscriberStatus"></h3>
+    <h3 class="paymentStatus"></h3>
+
+    <script>
+        const myCheckBox = document.querySelector(".myCheckBox");
+        const visaBtn = document.querySelector("#visaBtn");
+        const payPalBtn = document.querySelector("#payPalBtn");
+        const masterCardBtn = document.querySelector("#masterCardBtn");
+        const mySubmit = document.querySelector(".mySubmit");
+        const subscriberStatus = document.querySelector(".subscriberStatus");
+        const paymentStatus = document.querySelector(".paymentStatus");
+
+        mySubmit.onclick = function() {
+            if (myCheckBox.checked) {
+                subscriberStatus.innerHTML = `You have Subscribed to us`;
+            }
+            else {
+                subscriberStatus.innerHTML = `You havent subscribed to us yet`;
+            }
+
+            if (visaBtn.checked) {
+                paymentStatus.innerHTML = `You have selected Visa as your payment method`;
+            }
+            else if (payPalBtn.checked) {
+                paymentStatus.innerHTML = `You have selected PayPal as your payment method`;
+            }
+            else if (masterCardBtn.checked) {
+                paymentStatus.innerHTML = `You have selected MasterCard as your payment method`;
+            }
+            else {
+                paymentStatus.innerHTML = `You havent selected a payment method yet`;
+            }
+        }
+    </script>
+</body>
+</html>
