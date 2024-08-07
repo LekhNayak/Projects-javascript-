@@ -11,26 +11,36 @@
         <h1>Age Calculator</h1>
         <label for="birthday">Enter your birthday: </label>
         <input type="date" id="birthday">
-        <button onclick="calculateage()">Calculate Age</button>
+        <button onclick="calculateAge()">Calculate Age</button>
         <p id="result"></p>
     </div>
 
     <script>
-        function calculateage() {
-            const today = document.getElementById("birthdate").value;
-            const resultElement = document/getElementById("result");
+        function calculateAge() {
+            const birthdate = document.getElementById("birthday").value;
+            const resultElement = document.getElementById("result");
 
-            if(birthdate) {
+            if (birthdate) {
                 const today = new Date();
                 const birthDate = new Date(birthdate);
 
                 let ageYears = today.getFullYear() - birthDate.getFullYear();
-                let ageMonth = today.getMonth() - birthDate.getMonth();
+                let ageMonths = today.getMonth() - birthDate.getMonth();
                 let ageDays = today.getDate() - birthDate.getDate();
 
-                if (ageDays < 0){
-                    l
+                if (ageDays < 0) {
+                    ageMonths--;
+                    ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
                 }
+
+                if (ageMonths < 0) {
+                    ageYears--;
+                    ageMonths += 12;
+                }
+
+                resultElement.innerHTML = `You are <strong>${ageYears}</strong> years, <strong>${ageMonths}</strong> months, and <strong>${ageDays}</strong> days old.`;
+            } else {
+                resultElement.innerHTML = "<strong>Please enter your birthdate.</strong>";
             }
         }
     </script>
